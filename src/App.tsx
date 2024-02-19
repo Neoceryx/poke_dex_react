@@ -1,11 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router} from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
+import Listado from './pages/listado';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path='/' element={<Listado/>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -36,3 +36,7 @@ Start the server
   npm run start
 ```
 
+## Tech Stack
+
+**Client:** react bootstrap [Pycharm](https://react-bootstrap.netlify.app/)
+

@@ -38,5 +38,6 @@ Start the server
 
 ## Tech Stack
 
-**Client:** react bootstrap [Pycharm](https://react-bootstrap.netlify.app/)
+**Css Library:** react bootstrap [react bootstrap](https://react-bootstrap.netlify.app/)
+**API:** Pokemon [pokemon](https://unpkg.com/pokemons@1.1.0/pokemons.json)
 

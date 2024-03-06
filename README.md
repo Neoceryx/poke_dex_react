@@ -25,6 +25,11 @@ Go to the project directory
   cd poke_dex_react
 ```
 
+Install dependecies
+```bash
+  npm install
+```
+
 Start the server
 
 ```bash

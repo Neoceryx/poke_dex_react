@@ -7,8 +7,8 @@ export async function get_pokemons(): Promise<Pokemon[]> {
     const pokemons = data.results.map((p: any) => ({
         id: p.national_number,
         name: p.name,
-        img: p.sprites['normal'], 
-        img_large: p.sprites['large'],  
+        img: fix_name(p.sprites['normal']), 
+        img_large: fix_name(p.sprites['large']),  
         img_gif:fix_name(p.sprites['animated']),
         total: p.total,
         hp: p.hp,

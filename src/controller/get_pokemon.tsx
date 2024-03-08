@@ -9,7 +9,7 @@ export async function get_pokemons(): Promise<Pokemon[]> {
         name: p.name,
         img: p.sprites['normal'], 
         img_large: p.sprites['large'],  
-        img_gif:p.sprites['animated'],
+        img_gif:fix_name(p.sprites['animated']),
         total: p.total,
         hp: p.hp,
         attack: p.attack,
@@ -23,4 +23,15 @@ export async function get_pokemons(): Promise<Pokemon[]> {
     const unique_pokemons = pokemons.filter((p: any, index: number) => pokemons.findIndex((other: any) => other.id === p.id) === index);
 
     return unique_pokemons    
+}
+
+export function fix_name(name:string): string {
+
+    if(name.includes("farfetch'd")){
+       return name.replace("farfetch'd", "farfetchd")
+    }else
+    {
+        return name;
+    }
+
 }

@@ -31,26 +31,27 @@ const Listado = () => {
         
             <h1>Pokemon's:  {pokemon_list.length}</h1>
 
-            <Suspense fallback={<Loading />}>
-                <div className="content-wrap">
-                    <div className="content">
+            <div className="content-wrap">
+                <div className="content">
 
-                        <div className="row">
-                            <header>
-                                <input value={query} type="text" placeholder="search pokemon" onChange={(e) => setQuery(e.target.value.trim())} />
-                            </header>
-                        </div>
+                    <div className="row">
+                        <header>
+                            <input value={query} type="text" placeholder="search pokemon" onChange={(e) => setQuery(e.target.value.trim())} />
+                        </header>
+                    </div>
 
-                        <div className="row gap-3">
+                    <div className="row gap-3">
 
-                            {pokemon_filter.map((p, index) => (
+                        {pokemon_filter.map((p, index) => (
+                            <Suspense fallback={<Loading />}>
+                                
                                 <Card key={index} className="mx-auto" style={{ width: '18rem' }}>
                                     <Card.Header>Tipo:{p.type}</Card.Header>
                                     <Card.Img variant="top" width="80" height="100" className="d-block mx-auto w-50" src={p.img_gif} />
                                     <Card.Body>
-                                        
+
                                         <Card.Title className="text-center">{p.id} - {p.name}</Card.Title>
-                                        
+
                                         <ListGroup variant="flush">
 
                                             <ListGroup.Item>
@@ -63,7 +64,7 @@ const Listado = () => {
                                             </ListGroup.Item>
 
                                             <ListGroup.Item>
-                                            <Figure.Image
+                                                <Figure.Image
                                                     width={16}
                                                     height={16}
                                                     alt="171x180"
@@ -72,7 +73,7 @@ const Listado = () => {
                                             </ListGroup.Item>
 
                                             <ListGroup.Item>
-                                            <Figure.Image
+                                                <Figure.Image
                                                     width={16}
                                                     height={16}
                                                     alt="171x180"
@@ -81,7 +82,7 @@ const Listado = () => {
                                             </ListGroup.Item>
 
                                             <ListGroup.Item>
-                                            <Figure.Image
+                                                <Figure.Image
                                                     width={16}
                                                     height={16}
                                                     alt="171x180"
@@ -90,7 +91,7 @@ const Listado = () => {
                                             </ListGroup.Item>
 
                                             <ListGroup.Item>
-                                            <Figure.Image
+                                                <Figure.Image
                                                     width={16}
                                                     height={16}
                                                     alt="171x180"
@@ -99,7 +100,7 @@ const Listado = () => {
                                             </ListGroup.Item>
 
                                             <ListGroup.Item>
-                                            <Figure.Image
+                                                <Figure.Image
                                                     width={16}
                                                     height={16}
                                                     alt="171x180"
@@ -111,14 +112,13 @@ const Listado = () => {
 
                                     </Card.Body>
                                 </Card>
-                            ))}
 
-                        </div>
+                            </Suspense>
+                        ))}
+
                     </div>
                 </div>
-            </Suspense>
-
-
+            </div>
 
         </>
     )

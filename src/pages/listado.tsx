@@ -11,6 +11,7 @@ import Figure from 'react-bootstrap/Figure';
 const Listado = () => {
 
     const[pokemons, setPokemon] = useState<Pokemon[]>([])
+    const[query, setQuery] = useState("");
     
 
     useEffect(() => {
@@ -20,16 +21,28 @@ const Listado = () => {
         get_all_pokemons();
     });
 
+    const pokemon_list = pokemons?.slice(0, 151)
+    const pokemon_filter = pokemon_list.filter((p) =>{
+        return p.name.toLowerCase().match(query.toLowerCase())
+    })
+
     return (
         <>
         
-            <h1>Pokemon's:  {pokemons?.slice(0, 151).length}</h1>
+            <h1>Pokemon's:  {pokemon_list.length}</h1>
 
             <div className="content-wrap">
                 <div className="content">
+
+                    <div className="row">
+                        <header>
+                            <input value={query} type="text" placeholder="search pokemon" onChange={(e) => setQuery(e.target.value.trim())} />
+                        </header>
+                    </div>
+
                     <div className="row gap-3">
 
-                        {pokemons?.slice(0, 151).map((p, index) => (
+                        {pokemon_filter.map((p, index) => (
                             <Card key={index} className="mx-auto" style={{ width: '18rem' }}>
                                 <Card.Header>Tipo:{p.type}</Card.Header>
                                 <Card.Img variant="top" width="80" height="100" className="d-block mx-auto w-50" src={p.img_gif} />

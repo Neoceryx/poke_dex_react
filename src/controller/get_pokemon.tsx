@@ -27,11 +27,11 @@ export async function get_pokemons(): Promise<Pokemon[]> {
 
 export function fix_name(name:string): string {
 
-    if(name.includes("farfetch'd")){
-       return name.replace("farfetch'd", "farfetchd")
-    }else
-    {
-        return name;
-    }
+    if(name.includes("farfetch'd")){name = name.replace("farfetch'd", "farfetchd")}
+    if (name.includes("mr.-mime")){name = name.replace("mr.-mime", "mr-mime")}
+    if (name.includes("♀")){ name = name.replace("♀", "-m")}
+    if (name.includes("♂")){ name = name.replace("♂", "-f")}
+
+    return name
 
 }

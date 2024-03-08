@@ -21,13 +21,13 @@ const Listado = () => {
     return (
         <>
         
-            <h1>Pokemon's:  {pokemons?.slice(0, 150).length}</h1>
+            <h1>Pokemon's:  {pokemons?.slice(0, 151).length}</h1>
 
             <div className="content-wrap">
                 <div className="content">
                     <div className="row gap-3">
 
-                        {pokemons?.slice(0, 150).map((p, index) => (
+                        {pokemons?.slice(0, 151).map((p, index) => (
                             <Card key={index} className="mx-auto" style={{ width: '18rem' }}>
                                 <Card.Header>Tipo:{p.type}</Card.Header>
                                 <Card.Img variant="top" width="80" height="100" className="d-block mx-auto w-50" src={p.img_gif} />

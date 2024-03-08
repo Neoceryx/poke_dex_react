@@ -28,9 +28,9 @@ const Listado = () => {
                         {pokemons?.slice(0, 12).map((p, index) => (
                             <Card key={index} className="mx-auto" style={{ width: '18rem' }}>
                                 <Card.Header>Tipo:{p.type}</Card.Header>
-                                <Card.Img variant="top" width="80" height="100" className="d-block mx-auto w-50" src={p.img} />
+                                <Card.Img variant="top" width="80" height="100" className="d-block mx-auto w-50" src={p.img_gif} />
                                 <Card.Body>
-                                    <Card.Title className="text-center">{p.name}</Card.Title>
+                                    <Card.Title className="text-center">{p.id} - {p.name}</Card.Title>
                                     <ListGroup variant="flush">
                                         <ListGroup.Item>HP: {p.hp}</ListGroup.Item>
                                         <ListGroup.Item>Ataque: {p.attack}</ListGroup.Item>

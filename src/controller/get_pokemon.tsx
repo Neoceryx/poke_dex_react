@@ -20,7 +20,7 @@ export async function get_pokemons(): Promise<Pokemon[]> {
         type: p.type[0]
     }));
 
-    const unique_pokemons = pokemons.filter((p: any, index: number) => p.findIndex((other: any) => other.id === p.id) === index);
+    const unique_pokemons = pokemons.filter((p: any, index: number) => pokemons.findIndex((other: any) => other.id === p.id) === index);
 
     return unique_pokemons    
 }

@@ -36,3 +36,8 @@ Start the server
   npm run start
 ```
 
+## Tech Stack
+
+**Css Library:** react bootstrap [react bootstrap](https://react-bootstrap.netlify.app/)
+**API:** Pokemon [pokemon](https://unpkg.com/pokemons@1.1.0/pokemons.json)
+
